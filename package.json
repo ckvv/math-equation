@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "element-ui": "^2.10.1",
+    "plotly.js-dist": "^1.48.3",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -16,8 +18,12 @@
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "babel-eslint": "^10.0.1",
+    "css-loader": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "mathjs": "^6.0.3",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -29,7 +35,11 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+        "no-console": "off",
+        "//eslint-disable-next-line": "off",
+        "/* eslint-disable * ": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
