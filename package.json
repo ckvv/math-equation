@@ -18,6 +18,7 @@
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
     "css-loader": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -36,9 +37,9 @@
       "eslint:recommended"
     ],
     "rules": {
-        "no-console": "off",
-        "//eslint-disable-next-line": "off",
-        "/* eslint-disable * ": "off"
+      "no-console": "off",
+      "//eslint-disable-next-line": "off",
+      "/* eslint-disable * ": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"
