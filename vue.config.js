@@ -1,6 +1,6 @@
 // vue.config.js
 module.exports = {
     // options...
-    publicPath: './',
+    publicPath: '/math-equation/',
     outputDir: './server/public/',
 }
