@@ -19,11 +19,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install
       - run: npm run build
-      - run: npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.git_token }}
+          github_token: ${{ secrets.github_token }}
           publish_dir: ./dist
