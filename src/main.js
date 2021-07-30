@@ -1,15 +1,7 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-// import ElementUI from 'element-ui'
-import { Input, Slider } from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css'
+import plugins from '@/plugins';
 
-// Vue.use(ElementUI);
-Vue.component(Input.name, Input);
-Vue.component(Slider.name, Slider);
-
-Vue.config.productionTip = false
-
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const app = createApp(App);
+app.use(plugins);
+app.mount('#app');
