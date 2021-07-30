@@ -2,6 +2,7 @@ import path from 'path';
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import';
+import { name } from './package.json';
 
 const elPlugin = styleImport({
   libs: [{
@@ -14,6 +15,7 @@ const elPlugin = styleImport({
 });
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: name,
   server: {
     port: 8000,
   },
