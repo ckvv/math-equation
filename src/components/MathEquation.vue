@@ -1,5 +1,6 @@
 <template>
   <div class="math-equation-content">
+    <a href="https://github.com/chenkai0520/math-equation" class="github">Github</a>
     <div class="expression">
       <Kinput label="方程" v-model="expression" :placeholder="defaultExpression"/>
       <Kinput label="X轴范围" v-model.number="intervalSlider"/>
@@ -150,9 +151,14 @@
   .math-equation-content {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .github {
+      position: fixed;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;
+      z-index: 9999;
+      margin: 1rem;
+    }
     .expression {
       position: fixed;
       top: 30px;
