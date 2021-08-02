@@ -1,28 +1,33 @@
 <template>
   <div class="math-equation-content">
     <div class="expression">
-      <el-input v-model="expression" clearable placeholder="2x*sin(x); x*y;">
-        <template slot="prepend">方程</template>
-      </el-input>
-      <el-slider v-model="intervalSlider" show-input></el-slider>
+      <Kinput label="方程" v-model="expression" :placeholder="defaultExpression"/>
+      <Kinput label="X轴范围" v-model.number="intervalSlider"/>
     </div>
     <div id="plot"></div>
   </div>
 </template>
 
 <script>
+  import Kinput from "./KInput.vue"
   import {
     compile,
     range
   } from 'mathjs';
   import Plotly from 'plotly.js-dist/plotly'
 
+  const defaultExpression = 'cos(x);sin(x);';
+
   export default {
-    name: 'mathEquation',
+    components: {
+      Kinput,
+    },
+    name: 'MathEquation',
     data() {
       return {
-        expression: 'sin(0.5*x); min(x%2,0.5);',
-        intervalSlider: 12
+        defaultExpression,
+        expression: defaultExpression,
+        intervalSlider: 6
       }
     },
     watch: {
@@ -49,7 +54,7 @@
       },
       draw2DExpression(expressions, intervalSlider) {
         let traces = [];
-        let intervalGap = 0.05;
+        let intervalGap = 0.01;
 
         for (let expression of expressions) {
           if (!expression) continue;
@@ -78,7 +83,7 @@
       },
       draw3DExpression(expressions, intervalSlider) {
         let traces = [];
-        let intervalGap = 0.05;
+        let intervalGap = 0.01;
         for (let expression of expressions) {
           if (!expression) continue;
 
@@ -145,12 +150,17 @@
   .math-equation-content {
     width: 100%;
     height: 100%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .expression {
       position: fixed;
-      top: 4px;
-      left: 4px;
+      top: 30px;
+      right: 0;
       z-index: 1000;
+      .k-input {
+        margin: 4px;
+      }
     }
 
     #plot {
