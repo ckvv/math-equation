@@ -1,6 +1,6 @@
 <template>
   <div class="math-equation-content">
-    <a href="https://github.com/chenkai0520/math-equation" class="github">Github</a>
+    <a href="https://github.com/ckvv/math-equation" class="github">Github</a>
     <div class="expression">
       <Kinput label="方程" v-model="expression" :placeholder="defaultExpression"/>
       <Kinput label="X轴范围" v-model.number="intervalSlider"/>
